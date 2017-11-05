@@ -1,0 +1,4 @@
+services:
+#    louvre_p4.example:
+#        class: Louvre\P4Bundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
