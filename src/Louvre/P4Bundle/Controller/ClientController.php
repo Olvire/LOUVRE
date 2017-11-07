@@ -28,7 +28,7 @@ class ClientController extends Controller
 
     	$form = $formBuilder->getForm();
 
-    	return $this->render('LouvreP4Bundle:Default:index.html.twig' array('form' => $form->createView(),
+    	return $this->render('LouvreP4Bundle:Client:client.html.twig' array('form' => $form->createView(),
     	));
     }
 }
