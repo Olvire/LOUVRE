@@ -1,0 +1,11 @@
+body{
+	background-color: yellow;
+}
+
+h1{
+	border: dotted;
+}
+
+.parallax-container {
+	height: auto;
+}
