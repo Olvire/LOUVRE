@@ -1,16 +1,19 @@
 <!DOCTYPE html>
+<Html>
 
-<head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 		<title>{% block title %}Billeterie du LOUVRE{% endblock %}</title>
 
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+			<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+			<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 		{% endblock %}
-</head>
+	</head>
 
-
-<Html>
 	<body>
 		<h1> Bienvenue sur le site de la billeterie du LOUVRE </h1>
 
@@ -21,10 +24,25 @@
     		<div class="parallax"><img src="images/louvre1.jpg"></div>
   		</div>
   		
-  		<div class="section white">
+  		<div class="section blue">
 			<div class="row container">
       			<h2 class="header">Présentation</h2>
-     		 	<p class="grey-text text-darken-3 lighten-3">Bienvenu sur le site de billeterie du Musée du Louvre. Vous pourrez reserver vos billets ici</p>
+     		 	<h4 class="black-text text-darken-3 lighten-3">Bienvenue sur le site de billeterie du Musée du Louvre. Vous pourrez réserver vos billets ici</h4>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac accumsan nulla, eu lacinia justo. Aenean non ante id sem rutrum condimentum. Aenean rhoncus libero eget venenatis aliquet.
+					Donec accumsan sem sed libero malesuada, malesuada ultricies tortor cursus.
+					Curabitur in lectus in enim hendrerit mollis.Aenean lacus sem, blandit vel volutpat ac, ornare vitae quam. Quisque sagittis a metus ut euismod.
+					Donec accumsan, eros sed maximus porta, urna lectus scelerisque erat, vel feugiat ante leo ut sapien. Aenean iaculis tortor sem, sit amet vehicula arcu ullamcorper at.
+					Aenean rhoncus purus ut elit faucibus commodo. Proin vestibulum ipsum vel sapien laoreet interdum. Pellentesque blandit ut tortor id ullamcorper. Nam vulputate enim id mauris aliquet, vitae pellentesque diam laoreet.
+					Nullam placerat fermentum nisl, eu lacinia magna ultrices vel. Fusce dictum, augue non hendrerit accumsan, libero arcu vehicula velit, sit amet venenatis sem lectus ut quam.</p>
+
+				<p>Fusce volutpat sollicitudin ipsum nec consectetur.
+					Nam bibendum tellus nulla, id mattis massa elementum ac. Maecenas sagittis elit ut purus ullamcorper fermentum. Mauris eget convallis metus. Donec consequat nibh a purus facilisis, et congue magna eleifend.
+					Ut tempor lacus non mi ultrices, non mattis odio feugiat. Aliquam pretium vestibulum ultrices. Morbi feugiat, turpis a tincidunt malesuada, nulla nisl eleifend eros, at egestas elit turpis id dui.
+					Donec justo mauris, tristique a malesuada id, feugiat nec erat.
+					Ut auctor molestie enim in  Sed porttitor, urna a malesuada finibus, lectus velit venenatis ipsum, nec faucibus lectus mi blandit urna. Morbi non nibh semper, blandit ante ac, accumsan leo.
+					Vestibulum commodo pretium dolor, quis blandit ante aliquet nec. Maecenas ultrices iaculis elementum.
+					Sed suscipit, neque et vulputate tincidunt, nibh massa vestibulum dui, sed ullamcorper nunc ipsum id enim. Donec commodo maximus tortor.</p>
     		</div>
  		</div>
  		
@@ -34,10 +52,11 @@
 
 
 
-
-
         {% block javascripts %}
- 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>            <script src="{{ asset('js/main.js') }}"></script>
+ 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+ 			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ 			<script src="{{ asset('js/main.js') }}"></script>
 		{% endblock %}
 
     </body>

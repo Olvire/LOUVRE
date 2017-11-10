@@ -1,11 +1,8 @@
-body{
-	background-color: yellow;
-}
-
 h1{
 	border: dotted;
+	text-align: center;
 }
 
-.parallax-container {
-	height: auto;
+parallax-container {
+	height: 50%;
 }
