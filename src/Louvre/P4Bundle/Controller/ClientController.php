@@ -10,6 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class ClientController extends Controller
 {
@@ -28,7 +30,7 @@ class ClientController extends Controller
 
     	$form = $formBuilder->getForm();
 
-    	return $this->render('LouvreP4Bundle:Client:client.html.twig' array('form' => $form->createView(),
+    	return $this->render('LouvreP4Bundle:Client:client.html.twig', array('form' => $form->createView(),
     	));
     }
 }

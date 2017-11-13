@@ -1,3 +1,11 @@
+a {
+	color: black;
+}
+
+a:hover {
+	color: #66dd66;
+}
+
 h1{
 	border: dotted;
 	text-align: center;
