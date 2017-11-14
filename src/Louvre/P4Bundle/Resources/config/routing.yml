@@ -2,14 +2,14 @@ louvre_p4_homepage:
     path:     /
     defaults: { _controller: LouvreP4Bundle:Default:index }
 
-louvre_p4_home:
+client_home:
     path:    /p4
     defaults: { _controller: LouvreP4Bundle:Client:index }
 
-louvre_p4_view:
+client_view:
     path:    /p4/client/{id}
     defaults: { _controller: LouvreP4Bundle:Client:view }
 
-louvre_p4_request:
+client_request:
     path:    /p4/add
     defaults: { _controller: LouvreP4Bundle:Client:request }

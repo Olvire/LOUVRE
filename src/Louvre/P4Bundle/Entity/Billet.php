@@ -5,12 +5,12 @@ namespace Louvre\P4Bundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Reservation
+ * Billet
  *
- * @ORM\Table(name="reservation")
- * @ORM\Entity(repositoryClass="Louvre\P4Bundle\Repository\ReservationRepository")
+ * @ORM\Table(name="billet")
+ * @ORM\Entity(repositoryClass="Louvre\P4Bundle\Repository\BilletRepository")
  */
-class Reservation
+class Billet
 {
     /**
      * @var int
@@ -22,18 +22,18 @@ class Reservation
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="quantite", type="string", length=255)
      */
-    private $date;
+    private $quantite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="quantite", type="decimal", precision=10, scale=0)
+     * @ORM\Column(name="tarif", type="decimal", precision=10, scale=0)
      */
-    private $quantite;
+    private $tarif;
 
     /**
      * @var string
@@ -52,10 +52,16 @@ class Reservation
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=50)
+     * @ORM\Column(name="periodicite", type="string", length=255)
      */
-    private $email;
+    private $periodicite;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="age", type="decimal", precision=10, scale=0)
+     */
+    private $age;
 
 
     /**
@@ -69,35 +75,11 @@ class Reservation
     }
 
     /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return Reservation
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
      * Set quantite
      *
      * @param string $quantite
      *
-     * @return Reservation
+     * @return Billet
      */
     public function setQuantite($quantite)
     {
@@ -117,11 +99,35 @@ class Reservation
     }
 
     /**
+     * Set tarif
+     *
+     * @param string $tarif
+     *
+     * @return Billet
+     */
+    public function setTarif($tarif)
+    {
+        $this->tarif = $tarif;
+
+        return $this;
+    }
+
+    /**
+     * Get tarif
+     *
+     * @return string
+     */
+    public function getTarif()
+    {
+        return $this->tarif;
+    }
+
+    /**
      * Set nom
      *
      * @param string $nom
      *
-     * @return Reservation
+     * @return Billet
      */
     public function setNom($nom)
     {
@@ -145,7 +151,7 @@ class Reservation
      *
      * @param string $prenom
      *
-     * @return Reservation
+     * @return Billet
      */
     public function setPrenom($prenom)
     {
@@ -165,26 +171,50 @@ class Reservation
     }
 
     /**
-     * Set email
+     * Set periodicite
      *
-     * @param string $email
+     * @param string $periodicite
      *
-     * @return Reservation
+     * @return Billet
      */
-    public function setEmail($email)
+    public function setPeriodicite($periodicite)
     {
-        $this->email = $email;
+        $this->periodicite = $periodicite;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get periodicite
      *
      * @return string
      */
-    public function getEmail()
+    public function getPeriodicite()
     {
-        return $this->email;
+        return $this->periodicite;
+    }
+
+    /**
+     * Set age
+     *
+     * @param string $age
+     *
+     * @return Billet
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return string
+     */
+    public function getAge()
+    {
+        return $this->age;
     }
 }
