@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ReservationController extends Controller
 {
-    public function addAction(Request $request)
+    public function indexAction(Request $request)
     {
         $reservation = new Reservation();
 
@@ -25,8 +25,8 @@ class ReservationController extends Controller
         $formBuilder
             ->add('nom',    TextType::class)
             ->add('prenom', TextType::class)
-            ->add('age',    NumberType::class)
-            ->add('quantite',  NumberType::class)
+            ->add('age',    TextType::class)
+            ->add('quantite',  TextType::class)
             ->add('email',   TextType::class)
         ;
 

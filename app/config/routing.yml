@@ -10,3 +10,7 @@ billet:
     path:    /billet
     defaults: { _controller: LouvreP4Bundle:Billet:index}
 
+reservation:
+    path:    /reservation
+    defaults: { _controller: LouvreP4Bundle:Reservation:index}
+

@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class BilletController extends Controller
 {
-    public function addAction(Request $request)
+    public function indexAction(Request $request)
     {
         $billet = new Billet();
 
@@ -25,9 +25,9 @@ class BilletController extends Controller
         $formBuilder
             ->add('nom',    TextType::class)
             ->add('prenom', TextType::class)
-            ->add('age',    NumberType::class)
-            ->add('quantite',  NumberType::class)
-            ->add('tarif',  NumberType::class)
+            ->add('age',    TextType::class)
+            ->add('quantite',  TextType::class)
+            ->add('tarif',  TextType::class)
             ->add('periodicite',  TextType::class)
         ;
 
