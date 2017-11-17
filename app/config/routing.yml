@@ -6,5 +6,7 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
-
+billet:
+    path:    /billet
+    defaults: { _controller: LouvreP4Bundle:Billet:index}
 
