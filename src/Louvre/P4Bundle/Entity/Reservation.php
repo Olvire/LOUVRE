@@ -52,7 +52,7 @@ class Reservation
     /**
      * @var string
      *
-     * @ORM\Column(name="datedenaissance", type="string", length=255)
+     * @ORM\Column(name="datedenaissance", type="datetime")
      */
     private $datedenaissance;
 

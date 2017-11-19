@@ -26,7 +26,7 @@ class ReservationController extends Controller
             ->add('date',               DateType::class)
             ->add('nom',                TextType::class)
             ->add('prenom',             TextType::class)
-            ->add('datedenaissance',    TextType::class)
+            ->add('datedenaissance',    DateType::class)
             ->add('quantite',           TextType::class)
             ->add('email',              TextType::class)
             ->add('periodicite',        TextType::class)
