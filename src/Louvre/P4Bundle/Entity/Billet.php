@@ -52,13 +52,6 @@ class Billet
     /**
      * @var string
      *
-     * @ORM\Column(name="periodicite", type="string", length=255)
-     */
-    private $periodicite;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="age", type="decimal", precision=10, scale=0)
      */
     private $age;

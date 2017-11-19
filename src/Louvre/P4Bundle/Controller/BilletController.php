@@ -28,7 +28,6 @@ class BilletController extends Controller
             ->add('age',    TextType::class)
             ->add('quantite',  TextType::class)
             ->add('tarif',  TextType::class)
-            ->add('periodicite',  TextType::class)
         ;
 
         $form = $formBuilder->getForm();

@@ -23,11 +23,14 @@ class ReservationController extends Controller
         $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$reservation);
 
         $formBuilder
-            ->add('nom',    TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('age',    TextType::class)
-            ->add('quantite',  TextType::class)
-            ->add('email',   TextType::class)
+            ->add('date',               DateType::class)
+            ->add('nom',                TextType::class)
+            ->add('prenom',             TextType::class)
+            ->add('datedenaissance',    TextType::class)
+            ->add('quantite',           TextType::class)
+            ->add('email',              TextType::class)
+            ->add('periodicite',        TextType::class)
+            ->add('Reserver',           SubmitType::class )
         ;
 
         $form = $formBuilder->getForm();

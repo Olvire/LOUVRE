@@ -52,9 +52,23 @@ class Reservation
     /**
      * @var string
      *
+     * @ORM\Column(name="datedenaissance", type="string", length=255)
+     */
+    private $datedenaissance;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="email", type="string", length=50)
      */
     private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="periodicite", type="string", length=255)
+     */
+    private $periodicite;
 
 
 
@@ -186,5 +200,53 @@ class Reservation
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set periodicite
+     *
+     * @param string $periodicite
+     *
+     * @return Reservation
+     */
+    public function setPeriodicite($periodicite)
+    {
+        $this->periodicite = $periodicite;
+
+        return $this;
+    }
+
+    /**
+     * Get periodicite
+     *
+     * @return string
+     */
+    public function getPeriodicite()
+    {
+        return $this->periodicite;
+    }
+
+    /**
+     * Set datedenaissance
+     *
+     * @param string $datedenaissance
+     *
+     * @return Reservation
+     */
+    public function setDatedenaissance($datedenaissance)
+    {
+        $this->datedenaissance = $datedenaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get datedenaissance
+     *
+     * @return string
+     */
+    public function getDatedenaissance()
+    {
+        return $this->datedenaissance;
     }
 }
