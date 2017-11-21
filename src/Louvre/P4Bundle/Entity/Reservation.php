@@ -76,6 +76,10 @@ class Reservation
      */
     private $periodicite;
 
+    public function __construct()
+    {
+        $this->date = new \Datetime();
+    }
 
 
     /**
