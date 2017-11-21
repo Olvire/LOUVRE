@@ -20,7 +20,7 @@ class ReservationController extends Controller
     {
         $reservation = new Reservation();
 
-        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$reservation);
+        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $reservation);
 
         $formBuilder
             ->add('date',               DateType::class)
@@ -31,9 +31,18 @@ class ReservationController extends Controller
             ->add('email',              TextType::class)
             ->add('periodicite',        TextType::class)
             ->add('Reserver',           SubmitType::class )
+            ->getForm();
         ;
 
         $form = $formBuilder->getForm();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($reservation);
+            $em->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
 
         return $this->render('LouvreP4Bundle:Reservation:reservation.html.twig', array('form' => $form->createView(),
         ));
