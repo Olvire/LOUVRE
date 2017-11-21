@@ -3,6 +3,9 @@
 namespace Louvre\P4Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Reservation
@@ -25,6 +28,7 @@ class Reservation
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @Assert\DateTime()
      */
     private $date;
 
@@ -32,20 +36,21 @@ class Reservation
      * @var string
      *
      * @ORM\Column(name="quantite", type="decimal", precision=10, scale=0)
+     * @Assert\Length(max=10)
      */
     private $quantite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=30)
      */
     private $nom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=30)
      */
     private $prenom;
 
@@ -53,20 +58,21 @@ class Reservation
      * @var string
      *
      * @ORM\Column(name="datedenaissance", type="datetime")
+     * @Assert\Datetime()
      */
     private $datedenaissance;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=50)
+     * @ORM\Column(name="email", type="string", length=20)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="periodicite", type="string", length=255)
+     * @ORM\Column(name="periodicite", type="string", length=20)
      */
     private $periodicite;
 
@@ -250,4 +256,3 @@ class Reservation
         return $this->datedenaissance;
     }
 }
-
