@@ -47,6 +47,24 @@
 				jowl beef ribs chicken corned beef andouille biltong alcatra bresaola short loin pork loin. Kevin turducken tongue short loin, cupim jerky spare ribs. Pork ground round porchetta spare ribs salami.
 				Pork sausage pig porchetta drumstick.
 			</p>
+
+			<div id="introduction" class="section scrollspy">
+
+				<a class="btn" onclick="$('.tap-target').tapTarget('open')">Lire les News</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+				<div class="fixed-action-btn"  style="bottom: 100px; right: 24px;">
+					<a id="menu" class="btn btn-floating btn-large cyan" ><i class="material-icons">menu</i></a>
+				</div>
+
+				<div class="tap-target cyan" data-activates="menu">
+					<div class="tap-target-content white-text">
+						<h5>News du jour</h5>
+						<p class="white-text">Filet mignon alcatra prosciutto pork belly, sausage kielbasa turkey pork loin strip steak. Hamburger porchetta.
+						</p>
+					</div>
+				</div>
+			</div>
+
     	</div>
 
 		<div class="parallax-container">
@@ -58,6 +76,8 @@
 
 
         {% block javascripts %}
+			$('.tap-target').tapTarget('open');
+			$('.tap-target').tapTarget('close');
  			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
  			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

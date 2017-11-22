@@ -36,15 +36,27 @@ class ReservationController extends Controller
 
         $form = $formBuilder->getForm();
 
+        return $this->render('LouvreP4Bundle:Reservation:reservation.html.twig', array('form' => $form->createView(),
+        ));
+    }
+
+    public function addAction(Request $request)
+    {
+        $reservation = new Reservation();
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($reservation);
+
+        $em->flush();
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($reservation);
-            $em->flush();
+            $request->getSession()->getFlashBag()->add('notice', 'Reservation prise en compte.');
 
             return $this->redirectToRoute('homepage');
         }
 
-        return $this->render('LouvreP4Bundle:Reservation:reservation.html.twig', array('form' => $form->createView(),
-        ));
+
+
     }
 }
