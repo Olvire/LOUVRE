@@ -8,10 +8,9 @@ a:hover {
 }
 
 h1{
-	border: dotted;
 	text-align: center;
 }
 
 parallax-container {
-	height: 50%;
+	height: 30%;
 }
