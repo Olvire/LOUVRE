@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ReservationController extends Controller
 {
-    public function indexAction(Request $request)
+    public function addAction(Request $request)
     {
         $reservation = new Reservation();
 
@@ -31,32 +31,37 @@ class ReservationController extends Controller
             ->add('email',              TextType::class)
             ->add('periodicite',        TextType::class)
             ->add('Reserver',           SubmitType::class )
-            ->getForm();
         ;
 
         $form = $formBuilder->getForm();
 
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($reservation);
+                $em->flush();
+
+                $request->getSession()->getFlashbag()->add('notice', 'Reservation prise en compte.');
+
+                return $this->redirectToRoute('homepage');
+
+
+            }
+        }
+
         return $this->render('LouvreP4Bundle:Reservation:reservation.html.twig', array('form' => $form->createView(),
         ));
     }
-
-    public function addAction(Request $request)
-    {
-        $reservation = new Reservation();
-
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($reservation);
-
-        $em->flush();
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $request->getSession()->getFlashBag()->add('notice', 'Reservation prise en compte.');
-
-            return $this->redirectToRoute('homepage');
-        }
-
-
-
-    }
 }
+
+
+
+
+
+
+
+
+
+
