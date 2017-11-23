@@ -19,9 +19,7 @@ class ReservationController extends Controller
     public function addAction(Request $request)
     {
         $reservation = new Reservation();
-
         $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $reservation);
-
         $formBuilder
             ->add('date',               DateType::class)
             ->add('nom',                TextType::class)
@@ -42,15 +40,10 @@ class ReservationController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($reservation);
                 $em->flush();
-
                 $request->getSession()->getFlashbag()->add('notice', 'Reservation prise en compte.');
-
-                return $this->redirectToRoute('homepage');
-
-
+                return $this->redirectToRoute('billet');
             }
         }
-
         return $this->render('LouvreP4Bundle:Reservation:reservation.html.twig', array('form' => $form->createView(),
         ));
     }

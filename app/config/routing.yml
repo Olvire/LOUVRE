@@ -8,7 +8,7 @@ app:
 
 billet:
     path:    /billet
-    defaults: { _controller: LouvreP4Bundle:Billet:index}
+    defaults: { _controller: LouvreP4Bundle:Billet:add}
 
 reservation:
     path:    /reservation

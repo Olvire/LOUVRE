@@ -16,22 +16,32 @@ use Symfony\Component\HttpFoundation\Request;
 
 class BilletController extends Controller
 {
-    public function indexAction(Request $request)
+    public function addAction(Request $request)
     {
         $billet = new Billet();
-
         $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$billet);
-
         $formBuilder
-            ->add('nom',    TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('age',    TextType::class)
-            ->add('quantite',  TextType::class)
-            ->add('tarif',  TextType::class)
+            ->add('nom',        TextType::class)
+            ->add('prenom',     TextType::class)
+            ->add('age',        TextType::class)
+            ->add('quantite',   TextType::class)
+            ->add('tarif',      TextType::class)
+            ->add('Reserver',   SubmitType::class )
         ;
 
         $form = $formBuilder->getForm();
 
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($billet);
+                $em->flush();
+                $request->getSession()->getFlashbag()->add('notice', 'Billets reservés.');
+                return $this->redirectToRoute('homepage');
+            }
+        }
         return $this->render('LouvreP4Bundle:Billet:billet.html.twig', array('form' => $form->createView(),
         ));
     }
