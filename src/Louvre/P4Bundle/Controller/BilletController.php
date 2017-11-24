@@ -21,12 +21,12 @@ class BilletController extends Controller
         $billet = new Billet();
         $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$billet);
         $formBuilder
-            ->add('nom',        TextType::class)
-            ->add('prenom',     TextType::class)
-            ->add('age',        TextType::class)
-            ->add('quantite',   TextType::class)
-            ->add('tarif',      TextType::class)
-            ->add('Reserver',   SubmitType::class )
+            ->add('nom',          TextType::class)
+            ->add('prenom',       TextType::class)
+            ->add('age',          TextType::class)
+            ->add('quantite',     TextType::class)
+            ->add('tarif',        TextType::class)
+            ->add('Reserver',     SubmitType::class )
         ;
 
         $form = $formBuilder->getForm();

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<Html>
+<Html xmlns="http://www.w3.org/1999/html">
 
 	<head>
 		<meta charset="utf-8">
@@ -23,7 +23,19 @@
 
 		<div class="row container">
       		<h2 class="header">Présentation</h2>
-     	 	<h4>Bienvenue sur le site de billeterie du Musée du Louvre. Vous pourrez réserver vos billets <a href={{ path('reservation') }} target="_blank">ici</a>  </h4>
+			<h4>Bienvenue sur le site de billeterie du Musée du Louvre. Vous pourrez réserver vos billets
+				<a class=" btn modal-trigger" href="#modal1">ici</a>
+				<div id="modal1" class="modal">
+					<div class="modal-content">
+						<p>Information</p>
+						<p>Vous êtes sur le point d'entrer sur une page sécurisée permettant la reservation et l'achat de billets par le biais de votre carte de crédit. La transaction est effectué par une plateforme tierce ne dépendant pas du Musée.</p>
+					</div>
+					<div class="modal-footer">
+						<a href={{ path('homepage') }} class="modal-action btn-flat">Je refuse</a>
+						<a href={{ path('reservation') }} class="modal-action btn-flat ">J'accepte</a>
+					</div>
+				</div>
+			</h4>
 
 			<p>Spicy jalapeno bacon ipsum dolor amet pork loin kevin meatball pastrami turducken. Shankle t-bone chuck tri-tip, pancetta biltong shoulder. Rump capicola cow, buffalo meatloaf ribeye pastrami cupim.
 				Filet mignon swine doner flank pork chop leberkas buffalo t-bone prosciutto kevin boudin porchetta salami kielbasa jowl. Chicken rump venison biltong beef brisket cupim turkey.
@@ -73,16 +85,19 @@
 
 
 
-
-
         {% block javascripts %}
-			$('.tap-target').tapTarget('open');
-			$('.tap-target').tapTarget('close');
- 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
  			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
  			<script src="{{ asset('js/main.js') }}"></script>
+			<script>
+                $(document).ready(function(){
+                    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+                    $('.modal').modal();
+                });
+			</script>
 		{% endblock %}
 
     </body>
 </html>
+
