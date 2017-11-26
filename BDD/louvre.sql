@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 24 Novembre 2017 à 10:56
+-- Généré le :  Dim 26 Novembre 2017 à 10:27
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -75,11 +75,12 @@ INSERT INTO `reservation` (`id`, `date`, `quantite`, `nom`, `prenom`, `email`, `
 --
 
 CREATE TABLE `tarifs` (
+  `id` int(11) NOT NULL,
   `normal` decimal(16,0) NOT NULL,
-  `enfant` decimal(8,0) NOT NULL,
+  `enfant` decimal(12,0) NOT NULL,
   `senior` decimal(12,0) NOT NULL,
   `reduit` decimal(10,0) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Index pour les tables exportées
@@ -98,6 +99,12 @@ ALTER TABLE `reservation`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `tarifs`
+--
+ALTER TABLE `tarifs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables exportées
 --
 
@@ -111,6 +118,11 @@ ALTER TABLE `billet`
 --
 ALTER TABLE `reservation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT pour la table `tarifs`
+--
+ALTER TABLE `tarifs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
