@@ -13,6 +13,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 
 class ReservationController extends Controller
 {
@@ -25,10 +27,15 @@ class ReservationController extends Controller
             ->add('nom',                TextType::class)
             ->add('prenom',             TextType::class)
             ->add('datedenaissance',    DateType::class)
-            ->add('quantite',           TextType::class)
+            ->add('quantite',           ChoiceType::class, array(
+                'choices' =>array(
+                    '1' => 1,
+                    '2' => 2,
+                )
+            ))
             ->add('email',              TextType::class)
             ->add('periodicite',        TextType::class)
-            ->add('Reserver',           SubmitType::class )
+            ->add('Reserver',           SubmitType::class)
         ;
 
         $form = $formBuilder->getForm();

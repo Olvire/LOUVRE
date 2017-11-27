@@ -6,6 +6,7 @@
         <title>{% block title %}Billeterie du LOUVRE{% endblock %}</title>
 
         {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/reservation.css')}} " >
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
             <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,52 +14,42 @@
     </head>
 
     <body>
-        <h3>Réservation</h3>
+        <h3>Formulaire de Réservation</h3><br>
+
+        <p>Veuillez entre s'il vous plait, ci-dessous les informations concernant la personne effectuant la réservation des billets.</p> <br>
 
 
         <div class="row">
             <form class="col s12">
                 <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">person</i>
-                        <input id="nom" type="text" class="validate" >
-                        <label for="icon_prefix">{{ form_row(form.nom) }}</label>
+                    <div class="col s6">
+                        {{ form_row(form.nom) }}
                     </div>
 
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">person</i>
-                        <input id="prenom" type="text" class="validate" >
-                        <label for="icon_prefix">{{ form_row(form.prenom) }}</label>
+                    <div class="col s6">
+                        {{ form_row(form.prenom) }}
                     </div>
 
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">person</i>
-                        <input id="datedenaissance" type="text" class="validate" >
-                        <label for="icon_prefix">{{ form_row(form.datedenaissance) }}</label>
+                    <div class="col s6">
+                        {{ form_row(form.date) }}
+                        <input type="text" class="datepicker">
                     </div>
 
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">person</i>
-                        <input id="quantite" type="text" class="validate" >
-                        <label for="icon_prefix">{{ form_row(form.quantite) }}</label>
+                    <div class="col s6">
+                        {{ form_row(form.email) }}
                     </div>
 
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email" type="text" class="validate" >
-                        <label for="icon_prefix">{{ form_row(form.email) }}</label>
+                    <div class="col s6">
+                        {{ form_row(form.quantite) }}
+                        <input type="text">
                     </div>
 
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">person</i>
-                        <input id="periodicite" type="text" class="validate" >
-                        <label for="icon_prefix">{{ form_row(form.periodicite) }}</label>
+                    <div class="col s6">
+                        {{ form_row(form.periodicite) }}
                     </div>
 
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">submit</i>
-                        <input id="reserver" type="text" class="validate" >
-                        <label for="icon_prefix">{{ form_row(form.Reserver) }}</label>
+                    <div class="col s6">
+                        {{  form_row(form.Reserver) }}
                     </div>
 
 
@@ -73,6 +64,16 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+            <script>
+                $('.datepicker').pickadate({
+                    selectYears: 1, // Creates a dropdown of 15 years to control year,
+                    today: 'Today',
+                    clear: 'Clear',
+                    close: 'Ok',
+                    closeOnSelect: false // Close upon selecting a date,
+                });
+            </script>
+
         {% endblock %}
 
     </body>
