@@ -63,10 +63,16 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
             <script>
                 $('.datepicker').pickadate({
-                    selectYears: 1, // Creates a dropdown of 15 years to control year,
+                    disable: [
+                        [2017,12,18], // j'ai un probleme car il desactive en fait le 18 janvier 2018
+                        7
+                    ],
+                    firstDay: 1,
+                    min: "today",
                     today: 'Today',
                     clear: 'Clear',
                     close: 'Ok',
@@ -78,3 +84,4 @@
 
     </body>
 </html>
+
