@@ -69,9 +69,10 @@
                 $('.datepicker').pickadate({
                     disable: [
                         [2017,12,18], // j'ai un probleme car il desactive en fait le 18 janvier 2018
-                        7
+                        new Date(2017,12,20), // pareil il me desactive le 20 janvier 2018
+                        7 // me desactive bien tous les dimanches pas de soucis
                     ],
-                    firstDay: 1,
+                    firstDay: 1, // le lundi est le premier jour de la semaine : jour 1 donc le dimanche est bien le 7
                     min: "today",
                     today: 'Today',
                     clear: 'Clear',
