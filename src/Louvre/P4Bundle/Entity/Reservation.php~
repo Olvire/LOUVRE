@@ -68,6 +68,10 @@ class Reservation
      */
     private $periodicite;
 
+    /**
+    * @ORM\OneToOne(targetEntity="Louvre\P4Bundle\Entity\Billet", cascade={"persist"})
+    */
+    private $billet;
 
     public function __construct()
     {
@@ -228,27 +232,5 @@ class Reservation
         return $this->periodicite;
     }
 
-    /**
-     * Set datedenaissance
-     *
-     * @param string $datedenaissance
-     *
-     * @return Reservation
-     */
-    public function setDatedenaissance($datedenaissance)
-    {
-        $this->datedenaissance = $datedenaissance;
 
-        return $this;
-    }
-
-    /**
-     * Get datedenaissance
-     *
-     * @return string
-     */
-    public function getDatedenaissance()
-    {
-        return $this->datedenaissance;
-    }
 }

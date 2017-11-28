@@ -3,6 +3,7 @@
 namespace Louvre\P4Bundle\Controller;
 
 use Louvre\P4Bundle\Entity\Billet;
+use Louvre\P4Bundle\Form\BilletType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -19,15 +20,8 @@ class BilletController extends Controller
     public function addAction(Request $request)
     {
         $billet = new Billet();
-        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$billet);
-        $formBuilder
-            ->add('nom',          TextType::class)
-            ->add('prenom',       TextType::class)
-            ->add('age',          TextType::class)
-            ->add('quantite',     TextType::class)
-            ->add('tarif',        TextType::class)
-            ->add('Reserver',     SubmitType::class )
-        ;
+        $form = $this->get('form.factory')->create(BilletType::class, billet);
+
 
         $form = $formBuilder->getForm();
 

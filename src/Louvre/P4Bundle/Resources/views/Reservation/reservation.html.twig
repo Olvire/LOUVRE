@@ -14,14 +14,21 @@
     </head>
 
     <body>
-        <h3>Formulaire de Réservation</h3><br>
+    <br>
+
+    <a class="waves-effect waves-light btn" href="{{ path('homepage') }}" ><i class="material-icons left">home</i>Accueil</a>
+
+    <h3>Formulaire de Réservation</h3><br>
 
         <p>Veuillez entre s'il vous plait, ci-dessous les informations concernant la personne effectuant la réservation des billets.</p> <br>
 
-
-        <div class="row">
+    <div class="well" >
+        <div class="row" >
             <form class="col s12">
                 <div class="row">
+
+                {{ form_start(form) }}
+
                     <div class="col s6">
                         {{ form_row(form.nom) }}
                     </div>
@@ -41,7 +48,6 @@
 
                     <div class="col s6">
                         {{ form_row(form.quantite) }}
-                        <input type="text">
                     </div>
 
                     <div class="col s6">
@@ -49,13 +55,17 @@
                     </div>
 
                     <div class="col s6">
-                        {{ form_row(form.Reserver) }}
+                    {{ form_widget(form.Reserver, {'attr': {'class': 'btn btn-primary'}}) }}
                     </div>
 
+                    {{ form_rest(form) }}
+
+                {{ form_end(form) }}
 
                 </div>
             </form>
         </div>
+    </div>
 
 
 

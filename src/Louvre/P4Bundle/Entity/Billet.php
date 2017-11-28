@@ -27,37 +27,35 @@ class Billet
     /**
      * @var string
      *
-     * @ORM\Column(name="quantite", type="string", length=255)
-     */
-    private $quantite;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="tarif", type="decimal", precision=10, scale=0)
-     */
-    private $tarif;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=30)
      */
     private $nom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=30)
      */
     private $prenom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="age", type="decimal", precision=10, scale=0)
+     * @ORM\Column(name="pays", type="string", length=255)
      */
-    private $age;
+    private $pays;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datedenaissance", type="string", length=255)
+     */
+    private $datedenaissance;
+
+    /**
+     * @ORM\Column(name="reduction", type="boolean")
+     */
+    private $reduction = true;
 
 
     /**
@@ -68,54 +66,6 @@ class Billet
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set quantite
-     *
-     * @param string $quantite
-     *
-     * @return Billet
-     */
-    public function setQuantite($quantite)
-    {
-        $this->quantite = $quantite;
-
-        return $this;
-    }
-
-    /**
-     * Get quantite
-     *
-     * @return string
-     */
-    public function getQuantite()
-    {
-        return $this->quantite;
-    }
-
-    /**
-     * Set tarif
-     *
-     * @param string $tarif
-     *
-     * @return Billet
-     */
-    public function setTarif($tarif)
-    {
-        $this->tarif = $tarif;
-
-        return $this;
-    }
-
-    /**
-     * Get tarif
-     *
-     * @return string
-     */
-    public function getTarif()
-    {
-        return $this->tarif;
     }
 
     /**
@@ -212,5 +162,101 @@ class Billet
     public function getAge()
     {
         return $this->age;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param string $pays
+     *
+     * @return Billet
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return string
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+    /**
+     * Set datedenaissance
+     *
+     * @param string $datedenaissance
+     *
+     * @return Billet
+     */
+    public function setDatedenaissance($datedenaissance)
+    {
+        $this->datedenaissance = $datedenaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get datedenaissance
+     *
+     * @return string
+     */
+    public function getDatedenaissance()
+    {
+        return $this->datedenaissance;
+    }
+
+    /**
+     * Set published
+     *
+     * @param boolean $published
+     *
+     * @return Billet
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return boolean
+     */
+    public function getPublished()
+    {
+        return $this->published;
+    }
+
+    /**
+     * Set reduction
+     *
+     * @param boolean $reduction
+     *
+     * @return Billet
+     */
+    public function setReduction($reduction)
+    {
+        $this->reduction = $reduction;
+
+        return $this;
+    }
+
+    /**
+     * Get reduction
+     *
+     * @return boolean
+     */
+    public function getReduction()
+    {
+        return $this->reduction;
     }
 }

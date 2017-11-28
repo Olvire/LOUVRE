@@ -3,6 +3,7 @@
 namespace Louvre\P4Bundle\Controller;
 
 use Louvre\P4Bundle\Entity\Reservation;
+use Louvre\P4Bundle\Form\ReservationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -21,18 +22,7 @@ class ReservationController extends Controller
     public function addAction(Request $request)
     {
         $reservation = new Reservation();
-        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $reservation);
-        $formBuilder
-            ->add('date',               DateType::class)
-            ->add('nom',                TextType::class)
-            ->add('prenom',             TextType::class)
-            ->add('quantite',           TextType::class)
-            ->add('email',              TextType::class)
-            ->add('periodicite',        TextType::class)
-            ->add('Reserver',           SubmitType::class)
-        ;
-
-        $form = $formBuilder->getForm();
+        $form = $this->get('form.factory')->create(ReservationType::class, $reservation);
 
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
@@ -41,7 +31,9 @@ class ReservationController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($reservation);
                 $em->flush();
+
                 $request->getSession()->getFlashbag()->add('notice', 'Reservation prise en compte.');
+
                 return $this->redirectToRoute('billet');
             }
         }
