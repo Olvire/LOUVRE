@@ -57,14 +57,6 @@ class Reservation
     /**
      * @var string
      *
-     * @ORM\Column(name="datedenaissance", type="datetime")
-     * @Assert\Datetime()
-     */
-    private $datedenaissance;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="email", type="string", length=20)
      */
     private $email;
@@ -76,11 +68,11 @@ class Reservation
      */
     private $periodicite;
 
+
     public function __construct()
     {
         $this->date = new \Datetime();
     }
-
 
     /**
      * Get id
@@ -236,27 +228,5 @@ class Reservation
         return $this->periodicite;
     }
 
-    /**
-     * Set datedenaissance
-     *
-     * @param string $datedenaissance
-     *
-     * @return Reservation
-     */
-    public function setDatedenaissance($datedenaissance)
-    {
-        $this->datedenaissance = $datedenaissance;
 
-        return $this;
-    }
-
-    /**
-     * Get datedenaissance
-     *
-     * @return string
-     */
-    public function getDatedenaissance()
-    {
-        return $this->datedenaissance;
-    }
 }
