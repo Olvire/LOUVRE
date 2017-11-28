@@ -5,12 +5,12 @@
         <meta charset="utf-8">
         <title>{% block title %}Billeterie du LOUVRE{% endblock %}</title>
 
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/reservation.css')}} " >
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-            <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        {% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/reservation.css')}} " >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endblock %}
     </head>
 
     <body>
@@ -59,29 +59,32 @@
 
 
 
-        {% block javascripts %}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-            <script>
-                $('.datepicker').pickadate({
-                    disable: [
-                        [2017,12,18], // j'ai un probleme car il desactive en fait le 18 janvier 2018
-                        new Date(2017,12,20), // pareil il me desactive le 20 janvier 2018
-                        7 // me desactive bien tous les dimanches pas de soucis
-                    ],
-                    firstDay: 1, // le lundi est le premier jour de la semaine : jour 1 donc le dimanche est bien le 7
-                    min: "today",
-                    today: 'Today',
-                    clear: 'Clear',
-                    close: 'Ok',
-                    closeOnSelect: false // Close upon selecting a date,
-                });
-            </script>
+    {% block javascripts %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script>
+            $('.datepicker').pickadate({
+                disable: [
+                    [2017,11,24],
+                    [2017,11,25],
+                    [2017,11,31],
+                    [2018,0,1],
+                    [2018,4,8],
+                    7
+                ],
+                firstDay: 1,
+                min: "today",
+                today: 'Today',
+                clear: 'Clear',
+                close: 'Ok',
+                closeOnSelect: false // Close upon selecting a date,
+            });
+        </script>
 
-        {% endblock %}
+    {% endblock %}
 
     </body>
 </html>

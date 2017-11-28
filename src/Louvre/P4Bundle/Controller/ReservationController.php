@@ -27,14 +27,7 @@ class ReservationController extends Controller
             ->add('nom',                TextType::class)
             ->add('prenom',             TextType::class)
             ->add('datedenaissance',    DateType::class)
-            ->add('quantite',           ChoiceType::class, array(
-                'choices' =>array(
-                    'Maybe' => null,
-                    'Yes' => true,
-                    'No' => false,
-
-                ),
-            ))
+            ->add('quantite',           TextType::class)
             ->add('email',              TextType::class)
             ->add('periodicite',        TextType::class)
             ->add('Reserver',           SubmitType::class)
