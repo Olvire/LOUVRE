@@ -24,8 +24,7 @@ class ReservationType extends AbstractType
             ->add('quantite',           TextType::class)
             ->add('date',               DateTimeType::class)
             ->add('periodicite',        TextType::class)
-            ->add('billet',             BilletType::class)
-            ->add('Reserver',           SubmitType::class);
+            ->add('billet',             BilletType::class);
     }
     
 

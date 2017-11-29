@@ -24,8 +24,7 @@ class BilletType extends AbstractType
             ->add('prenom',           TextType::class)
             ->add('datedenaissance',  DateType::class)
             ->add('reduction',        CheckboxType::class, array('required' => false))
-            ->add('pays',             TextType::class)
-            ->add('Reserver',         SubmitType::class);
+            ->add('pays',             TextType::class);
     }
     
     public function configureOptions(OptionsResolver $resolver)
