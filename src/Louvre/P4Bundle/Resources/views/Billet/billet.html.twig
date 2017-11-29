@@ -38,10 +38,12 @@
 
                         <div class="col s6">
                             {{ form_row(form.datedenaissance) }}
-                            <input class="datepicker">
+                            <input type="text" class="datepicker">
                         </div>
 
-                            {{ form_row(form.Reserver) }}
+                        <div class="col s6">
+                            {{ form_widget(form.Reserver, {'attr': {'class': 'btn btn-primary'}}) }}
+                        </div>
 
                         {{ form_end(form) }}
                     </div>
@@ -59,11 +61,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script>
             $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15, // Creates a dropdown of 15 years to control year,
                 firstDay: 1,
                 today: 'Today',
                 clear: 'Clear',
                 close: 'Ok',
-                closeOnSelect: false
+                closeOnSelect: false // Close upon selecting a date,
             });
         </script>
 
