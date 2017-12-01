@@ -22,10 +22,7 @@ class BilletController extends Controller
     public function addAction(Request $request)
     {
         $billet = new Billet();
-        $form = $this->get('form.factory')->create(BilletType::class, billet);
-
-
-        $form = $formBuilder->getForm();
+        $form = $this->get('form.factory')->create(BilletType::class, $billet);
 
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
@@ -34,7 +31,9 @@ class BilletController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($billet);
                 $em->flush();
+
                 $request->getSession()->getFlashbag()->add('notice', 'Billets reservés.');
+
                 return $this->redirectToRoute('homepage');
             }
         }

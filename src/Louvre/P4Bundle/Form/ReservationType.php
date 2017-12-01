@@ -5,6 +5,8 @@ namespace Louvre\P4Bundle\Form;
 use Louvre\P4Bundle\Repository\CategoryRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -22,9 +24,8 @@ class ReservationType extends AbstractType
             ->add('prenom',             TextType::class)
             ->add('email',              TextType::class)
             ->add('quantite',           TextType::class)
-            ->add('date',               DateTimeType::class)
-            ->add('periodicite',        TextType::class)
-            ->add('billet',             BilletType::class);
+            ->add('date',               DateType::class)
+            ->add('periodicite',        TextType::class);
     }
     
 

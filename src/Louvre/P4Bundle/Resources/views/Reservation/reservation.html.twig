@@ -6,12 +6,10 @@
         <title>{% block title %}Billeterie du LOUVRE{% endblock %}</title>
 
     {% block stylesheets %}
-        <!--
         <link rel="stylesheet" href="{{ asset('css/reservation.css')}} " >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        -->
     {% endblock %}
     </head>
 
@@ -24,49 +22,55 @@
 
         <p>Veuillez entrer s'il vous plait, ci-dessous les informations concernant la personne effectuant la réservation des billets.</p> <br>
 
-    <div class="well" >
-        <div class="row" >
-            <form class="col s12">
-                <div class="row">
-                    {{ form_start(form) }}
+    <div class="container">
+        <div class="well" >
+            <div class="row" >
+                <form class="col s12">
+                    <div class="row">
+                        {{ form_start(form) }}
 
-                        <div class="col s6">
+                        <div class="col s6 input-field">
                             {{ form_row(form.nom) }}
                         </div>
 
-                        <div class="col s6">
+                        <div class="col s6 input-field">
                             {{ form_row(form.prenom) }}
+
                         </div>
 
-                        <div class="col s6">
+                        <div class="col s6 input-field">
                             {{ form_row(form.date) }}
-                            <input type="text" class="datepicker">
+
                         </div>
 
-                        <div class="col s6">
+                        <div class="col s6 input-field">
                             {{ form_row(form.email) }}
+
                         </div>
 
-                        <div class="col s6">
+                        <div class="col s6 input-field">
                             {{ form_row(form.quantite) }}
+
                         </div>
 
-                        <div class="col s6">
+                        <div class="col s6 input-field">
                             {{ form_row(form.periodicite) }}
+
                         </div>
 
-                    {{ form_end(form) }}
-                </div>
-            </form>
+                        {{ form_end(form) }}
+
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
 
 
 
+
     {% block javascripts %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

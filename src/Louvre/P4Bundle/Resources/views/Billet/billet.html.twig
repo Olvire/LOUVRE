@@ -17,35 +17,37 @@
 	<body>
 		<h3>Commande de Billets</h3>
 
-        <div class="well" >
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        {{ form_start(form) }}
+        <div class="container">
 
-                            <div class="col s6">
-                                {{ form_row(form.nom) }}
-                            </div>
+            <div class="well" >
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            {{ form_start(form) }}
 
-                            <div class="col s6">
-                                {{ form_row(form.prenom) }}
-                            </div>
+                                <div class="col s6">
+                                    {{ form_row(form.nom) }}
+                                </div>
 
-                            <div class="col s6">
-                                {{ form_row(form.pays) }}
-                            </div>
+                                <div class="col s6">
+                                    {{ form_row(form.prenom) }}
+                                </div>
 
-                            <div class="col s6">
-                                {{ form_row(form.datedenaissance) }}
-                                <input type="text" class="datepicker">
-                            </div>
+                                <div class="col s6">
+                                    {{ form_row(form.pays) }}
+                                </div>
 
-                        {{ form_end(form) }}
-                    </div>
-                </form>
+                                <div class="col s6">
+                                    {{ form_row(form.datedenaissance) }}
+                                    <input type="text" class="datepicker">
+                                </div>
+
+                            {{ form_end(form) }}
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
 
 
     {% block javascripts %}
