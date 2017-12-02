@@ -41,14 +41,14 @@ class Billet
     /**
      * @var string
      *
-     * @ORM\Column(name="pays", type="string", length=255)
+     * @ORM\Column(name="pays", type="string", length=30)
      */
     private $pays;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="datedenaissance", type="string", length=255)
+     * @ORM\Column(name="datedenaissance", type="string", length=15)
      */
     private $datedenaissance;
 
@@ -234,5 +234,29 @@ class Billet
     public function getPublished()
     {
         return $this->published;
+    }
+
+    /**
+     * Set reduction
+     *
+     * @param boolean $reduction
+     *
+     * @return Billet
+     */
+    public function setReduction($reduction)
+    {
+        $this->reduction = $reduction;
+
+        return $this;
+    }
+
+    /**
+     * Get reduction
+     *
+     * @return boolean
+     */
+    public function getReduction()
+    {
+        return $this->reduction;
     }
 }

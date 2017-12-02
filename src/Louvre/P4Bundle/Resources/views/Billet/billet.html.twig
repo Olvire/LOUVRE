@@ -6,10 +6,12 @@
         <title>{% block title %}Billeterie du LOUVRE{% endblock %}</title>
 
     {% block stylesheets %}
+
         <link rel="stylesheet" href="{{ asset('css/reservation.css')}} " >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     {% endblock %}
 
     </head>
@@ -18,31 +20,40 @@
 		<h3>Commande de Billets</h3>
 
         <div class="container">
-
             <div class="well" >
-                <div class="row">
+                <div class="row" >
                     <form class="col s12">
                         <div class="row">
                             {{ form_start(form) }}
 
-                                <div class="col s6">
-                                    {{ form_row(form.nom) }}
-                                </div>
+                            <div class="col s6 input-field">
+                                {{ form_row(form.nom) }}
+                            </div>
 
-                                <div class="col s6">
-                                    {{ form_row(form.prenom) }}
-                                </div>
+                            <div class="col s6 input-field">
+                                {{ form_row(form.prenom) }}
 
-                                <div class="col s6">
-                                    {{ form_row(form.pays) }}
-                                </div>
+                            </div>
 
-                                <div class="col s6">
-                                    {{ form_row(form.datedenaissance) }}
-                                    <input type="text" class="datepicker">
-                                </div>
+                            <div class="col s6 input-field">
+                                {{ form_row(form.datedenaissance, {'label': "Date de Naissance", 'attr': {'class': 'datepicker'}}) }}
+                            </div>
+
+                            <div class="col s6 input-field">
+                                {{ form_row(form.pays) }}
+
+                            </div>
+
+                            <div class="col s6">
+                                {{ form_row(form.reduction, {'label': "Cochez si vous avez une réduction"})}}
+                            </div>
+
+                            <div class="col s6">
+                                {{ form_row(form.Reserver) }}
+                            </div>
 
                             {{ form_end(form) }}
+
                         </div>
                     </form>
                 </div>
@@ -51,20 +62,18 @@
 
 
     {% block javascripts %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script>
             $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15, // Creates a dropdown of 15 years to control year,
+                selectMonths: true,
+                selectYears: 15,
                 firstDay: 1,
                 today: 'Today',
                 clear: 'Clear',
                 close: 'Ok',
-                closeOnSelect: false // Close upon selecting a date,
+                closeOnSelect: false
             });
         </script>
 

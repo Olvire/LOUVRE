@@ -25,12 +25,11 @@ class Reservation
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime")
-     * @Assert\DateTime()
+     * @ORM\Column(name="jourreservation", type="string", length=30)
      */
-    private $date;
+    private $jourreservation;
 
     /**
      * @var string
@@ -233,4 +232,28 @@ class Reservation
     }
 
 
+
+    /**
+     * Set billet
+     *
+     * @param \Louvre\P4Bundle\Entity\Billet $billet
+     *
+     * @return Reservation
+     */
+    public function setBillet(\Louvre\P4Bundle\Entity\Billet $billet = null)
+    {
+        $this->billet = $billet;
+
+        return $this;
+    }
+
+    /**
+     * Get billet
+     *
+     * @return \Louvre\P4Bundle\Entity\Billet
+     */
+    public function getBillet()
+    {
+        return $this->billet;
+    }
 }

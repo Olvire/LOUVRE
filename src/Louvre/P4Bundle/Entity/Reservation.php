@@ -25,12 +25,11 @@ class Reservation
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime")
-     * @Assert\DateTime()
+     * @ORM\Column(name="jourreservation", type="string", length=30)
      */
-    private $date;
+    private $jourreservation;
 
     /**
      * @var string
@@ -256,5 +255,29 @@ class Reservation
     public function getBillet()
     {
         return $this->billet;
+    }
+
+    /**
+     * Set jourreservation
+     *
+     * @param string $jourreservation
+     *
+     * @return Reservation
+     */
+    public function setJourreservation($jourreservation)
+    {
+        $this->jourreservation = $jourreservation;
+
+        return $this;
+    }
+
+    /**
+     * Get jourreservation
+     *
+     * @return string
+     */
+    public function getJourreservation()
+    {
+        return $this->jourreservation;
     }
 }

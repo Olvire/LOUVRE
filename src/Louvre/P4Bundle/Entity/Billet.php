@@ -41,14 +41,14 @@ class Billet
     /**
      * @var string
      *
-     * @ORM\Column(name="pays", type="string", length=255)
+     * @ORM\Column(name="pays", type="string", length=30)
      */
     private $pays;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="datedenaissance", type="string", length=255)
+     * @ORM\Column(name="datedenaissance", type="string", length=15)
      */
     private $datedenaissance;
 
