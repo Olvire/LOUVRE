@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <Html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>{% block title %}Billeterie du LOUVRE{% endblock %}</title>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Billeterie du LOUVRE{% endblock %}</title>
 
     {% block stylesheets %}
 
@@ -14,70 +14,38 @@
 
     {% endblock %}
 
-    </head>
+</head>
 
-	<body>
-		<h3>Commande de Billets</h3>
+<body>
+<h3>Commande de Billets</h3>
 
-        <div class="container">
-            <div class="well" >
-                <div class="row" >
-                    <form class="col s12">
-                        <div class="row">
-                            {{ form_start(form) }}
-
-                            <div class="col s6 input-field">
-                                {{ form_row(form.nom) }}
-                            </div>
-
-                            <div class="col s6 input-field">
-                                {{ form_row(form.prenom) }}
-
-                            </div>
-
-                            <div class="col s6 input-field">
-                                {{ form_row(form.datedenaissance, {'label': "Date de Naissance", 'attr': {'class': 'datepicker'}}) }}
-                            </div>
-
-                            <div class="col s6 input-field">
-                                {{ form_row(form.pays) }}
-
-                            </div>
-
-                            <div class="col s6">
-                                {{ form_row(form.reduction, {'label': "Cochez si vous avez une réduction"})}}
-                            </div>
-
-                            <div class="col s6">
-                                {{ form_row(form.Reserver) }}
-                            </div>
-
-                            {{ form_end(form) }}
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="container">
+    <div class="well" >
+        {{ form(form) }}
+    </div>
+</div>
+</div>
 
 
-    {% block javascripts %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <script>
-            $('.datepicker').pickadate({
-                selectMonths: true,
-                selectYears: 15,
-                firstDay: 1,
-                today: 'Today',
-                clear: 'Clear',
-                close: 'Ok',
-                closeOnSelect: false
-            });
-        </script>
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true,
+            selectYears: true,
+            selectYears: 110,
+            firstDay: 1,
+            max: 'Today',
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false
+        });
+    </script>
 
-    {% endblock %}
+{% endblock %}
 
-	</body>
+</body>
 </html>

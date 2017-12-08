@@ -20,9 +20,9 @@ class BilletType extends AbstractType
         $builder
             ->add('nom',              TextType::class)
             ->add('prenom',           TextType::class)
-            ->add('datedenaissance',  TextType::class)
+            ->add('datedenaissance',  TextType::class, array('label' => 'Date de Naissance', 'attr' => array('class' => 'datepicker')))
             ->add('pays',             TextType::class)
-            ->add('reduction',        CheckboxType::class)
+            ->add('reduction',        CheckboxType::class, array('label' => 'Tarifs Réduits', 'required' => false,))
             ->add('Reserver',         SubmitType::class);
         ;
     }

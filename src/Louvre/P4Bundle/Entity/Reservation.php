@@ -67,11 +67,6 @@ class Reservation
      */
     private $periodicite;
 
-    /**
-    * @ORM\OneToOne(targetEntity="Louvre\P4Bundle\Entity\Billet", cascade={"persist"})
-    */
-    private $billet;
-
     public function __construct()
     {
         $this->date = new \Datetime();
