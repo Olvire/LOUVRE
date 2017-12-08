@@ -142,52 +142,5 @@ class tarifs
     {
         return $this->reduit;
     }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return tarifs
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set tarif
-     *
-     * @param string $tarif
-     *
-     * @return tarifs
-     */
-    public function setTarif($tarif)
-    {
-        $this->tarif = $tarif;
-
-        return $this;
-    }
-
-    /**
-     * Get tarif
-     *
-     * @return string
-     */
-    public function getTarif()
-    {
-        return $this->tarif;
-    }
 }
+

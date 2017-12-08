@@ -22,7 +22,7 @@ class ReservationType extends AbstractType
         $builder
             ->add('nom',                TextType::class)
             ->add('prenom',             TextType::class)
-            ->add('jourreservation',    TextType::class)
+            ->add('jourreservation',    TextType::class, array('label' => 'Jour de la Reservation', 'attr' => array('class' => 'datepicker')))
             ->add('email',              TextType::class)
             ->add('quantite',           TextType::class)
             ->add('periodicite',        TextType::class)
